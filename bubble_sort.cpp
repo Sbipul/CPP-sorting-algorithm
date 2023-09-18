@@ -20,7 +20,7 @@ class Bubble_sort:public Sorts{
             for(int i=0;i<size;i++){
                 for(int j=0;j<(size-i)-1;j++){
                     if(new_arr[j]>new_arr[j+1]){
-                        temp = new_arr[i];
+                        temp = new_arr[j];
                         new_arr[j] = new_arr[j+1];
                         new_arr[j+1] = temp;
                     }
