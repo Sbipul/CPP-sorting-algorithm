@@ -29,7 +29,7 @@ class Bubble_sort:public Sorts{
             }
         }
         void print_arr(){
-            cout<<"New arr from bubble sort--->";
+            cout<<"Bubble sort--->";
             for(int i=0;i<size;i++){
                 cout<<new_arr[i]<<" ,";
             }
@@ -46,7 +46,6 @@ class Selection_sort:public Sorts{
             }
         }
         void sorted_arr(){
-            //{50,30,60,90,10,20,80,70,40,100}
             for(int i=0;i<size;i++){
                 int min_number = new_arr[0];
                 int index_of_min_number = 0;
@@ -61,13 +60,40 @@ class Selection_sort:public Sorts{
             }
         }
         void print_arr(){
-            cout<<"New arr from selection sort--->";
+            cout<<"Selection sort--->";
             for(int i=0;i<size;i++){
                 cout<<sorted[i]<<" ,";
             }
             cout<<endl;
         }
 
+};
+class Insertion_sort:public Sorts{
+    public:
+        int new_arr[10];
+        void create_new_arr(){
+            for(int i=0;i<size;i++){
+                new_arr[i] = arr[i];
+            }
+        }
+        void sorted_arr(){
+                for(int i=1;i<size;i++){
+                    int key = new_arr[i];
+                    int j = i -1;
+                    while (key < new_arr[j] && j >= 0) {
+                      new_arr[j + 1] = new_arr[j];
+                      --j;
+                    }
+                    new_arr[j + 1] = key;
+                }
+        }
+        void print_arr(){
+            cout<<"Insertion sort--->";
+            for(int i=0;i<size;i++){
+                cout<<new_arr[i]<<" ,";
+            }
+            cout<<endl;
+        }
 };
 
 int main(){
@@ -84,7 +110,11 @@ int main(){
     Selection.sorted_arr();
     Selection.print_arr();
 
-
+    // Insertion sort
+    Insertion_sort Insertion;
+    Insertion.create_new_arr();
+    Insertion.sorted_arr();
+    Insertion.print_arr();
 
 
     getch();
